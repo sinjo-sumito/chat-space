@@ -5,16 +5,16 @@
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
-- has_many :post
-- has_many :group
+- has_many :posts
+- has_many :groups through:  :users_groups
 
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|text|text|null: false|
+|image|string|
+|text|text|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -23,10 +23,11 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :user
-- has_many  :post
+- has_many :users through:  :users_groups
+- has_many  :posts
 
 ## users_groupsテーブル
 |Column|Type|Options|
