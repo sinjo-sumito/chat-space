@@ -1,0 +1,40 @@
+.chat-main
+  .chat-main__group
+    %div.chat-main__group__right
+      %div.chat-main__group__right__current
+        おお
+      %ul.chat-main__group__right__member 
+        llll:
+        %li.chat-main__group__right__member__list
+          aaa
+    
+    =link_to "#", class:"edit-btn" do
+      edit
+  
+  
+  .chat-main__message
+    %div.chat-main__message__box
+      %div.chat-main__message__box__info
+        %div.chat-main__message__box__info__username
+          ssss
+        %div.chat-main__message__box__info__date
+          dddd
+      %div.chat-main__message__posting 
+        wwwwww   
+
+    %div.chat-main__message__box
+      %div.chat-main__message__box__info
+        %div.chat-main__message__box__info__username
+          ssss
+        %div.chat-main__message__box__info__date
+          dddd
+      %div.chat-main__message__posting 
+        wwwwww       
+  .chat-main__message-form
+    %form.chat-main__message-form__box
+      %div.chat-main__message-form__box__in
+        %input{type: "text", placehoder: "type a message", class: "chat-main__message-form__box__in__text"}
+        %label{class: "chat-main__message-form__box__in__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "chat-main__message-form__box__in__image__hidden"}
+      %input{type: "submit", value: "Send", class: "chat-main__message-form__box__submit"}
