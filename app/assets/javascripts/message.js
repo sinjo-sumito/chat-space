@@ -1,6 +1,5 @@
 $(function(){
-  function buildMessage(message){
-    console.log(message)
+  function buildMessage(message){    
     if ( message.image ) {
       let html = 
       `<div class="chat-main__message__box">
@@ -57,7 +56,6 @@ $(function(){
     })
     .done(function(message){
       let html = buildMessage(message)
-      console.log(html)
       $('.chat-main__message').append(html);
       $('form')[0].reset(); 
       $('.chat-main__message').animate({ scrollTop: $('.chat-main__message')[0].scrollHeight});
