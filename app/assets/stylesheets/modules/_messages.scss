@@ -43,6 +43,7 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       padding: 0 20px;
+      overflow: scroll;
       &__box {
         font-weight: bolder;
         padding: 20px 0 40px 0;
@@ -102,6 +103,7 @@
       height: calc(100vh - 190px);
       box-sizing: border-box;
       padding: 35px 40px 0;
+      overflow: scroll;
       &__box {
         margin-bottom: 46px;
         &__info {
