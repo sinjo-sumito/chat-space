@@ -2,15 +2,17 @@ $(function(){
   function buildMessage(message){    
     if ( message.image ) {
       let html = 
-      `<div class="chat-main__message__box">
-        <div class="chat-main__message__box__info">
-          <div class="chat-main__message__box__info__username">
-            ${message.user_name}
+      `<div class="MessageBox" data-message-id=${message.id}>
+        <div class="chat-main__message__box">
+          <div class="chat-main__message__box__info">
+            <div class="chat-main__message__box__info__username">
+              ${message.user_name}
+            </div>
+            <div class="chat-main__message__box__info__date">
+              ${message.created_at}
+            </div>
           </div>
-          <div class="chat-main__message__box__info__date">
-            ${message.created_at}
-          </div>
-        </div>
+        </div>  
         <div class="chat-main__message__posting">
           <p class="Message__content">
             ${message.content}
@@ -21,7 +23,8 @@ $(function(){
       return html;  
     } else {
       let html =
-      `<div class="chat-main__message__box">
+      `<div class="MessageBox" data-message-id=${message.id}></div>
+        <div class="chat-main__message__box">
           <div class="chat-main__message__box__info">
             <div class="chat-main__message__box__info__username">
               ${message.user_name}
@@ -30,12 +33,13 @@ $(function(){
               ${message.created_at}
             </div>
           </div>
-          <div class="chat-main__message__posting">
-            <p class="Message__content">
-              ${message.content}
-            </p>
-          </div>
-        </div>`
+        </div> 
+        <div class="chat-main__message__posting">
+          <p class="Message__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
         return html;
       };
   }
@@ -63,6 +67,7 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Form__submit').prop("disabled", false);
     });
-  })
-})
+  });
+});
